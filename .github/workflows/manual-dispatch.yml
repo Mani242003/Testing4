@@ -30,5 +30,7 @@ jobs:
       - name: Print user message
         run: echo "Message = ${{ github.event.inputs.message }}"
 
-      - name: Final step
-        run: echo "✅ Workflow completed successfully"
+
+      - name: Force failure
+        run: exit 1
+
