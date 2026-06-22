@@ -30,7 +30,5 @@ jobs:
       - name: Print user message
         run: echo "Message = ${{ github.event.inputs.message }}"
 
-
-      - name: Force failure
+      - name: ❌ Force failure
         run: exit 1
-
