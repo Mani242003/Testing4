@@ -1,0 +1,36 @@
+name: Sample Dispatch 2
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: "Enter application name"
+        required: true
+        default: "my-app"
+        type: string
+
+      action_type:
+        description: "Select action"
+        required: true
+        type: choice
+        options:
+          - build
+          - deploy
+          - test
+
+jobs:
+  simple-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print App Name
+        run: echo "App Name = ${{ github.event.inputs.app_name }}"
+
+      - name: Print Action
+        run: echo "Action Type = ${{ github.event.inputs.action_type }}"
+
+      - name: Demo Logic
+        run: echo "Running selected action..."
+
+      - name: Completed
+        run: echo "✅ Done OK"
